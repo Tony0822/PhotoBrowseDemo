@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AdImageButtonView.h"
 
 @interface ViewController ()
 
@@ -16,9 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
 
+  AdImageButtonView *timerView = [[AdImageButtonView alloc] initWithFrame:CGRectMake(100, 100, 40, 40)];
+    timerView.delayTime = 4;
+    [self.view addSubview:timerView];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
