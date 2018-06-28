@@ -51,6 +51,12 @@
 		3E2940A020E20E440048D01A /* ADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29409F20E20E440048D01A /* ADView.m */; };
 		3E2940A320E22D370048D01A /* ADTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2940A220E22D370048D01A /* ADTestView.m */; };
 		3E2940A620E23C6D0048D01A /* AdImageButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2940A420E23C6D0048D01A /* AdImageButtonView.m */; };
+		3E2940DF20E4B4780048D01A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2940DE20E4B4780048D01A /* UIView+Frame.m */; };
+		3E2940E220E4B4DA0048D01A /* GCYPhotoGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2940E120E4B4DA0048D01A /* GCYPhotoGroupModel.m */; };
+		3E2940E520E4B7940048D01A /* GCYPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2940E420E4B7940048D01A /* GCYPhotoModel.m */; };
+		3E2940E820E4B97A0048D01A /* GCYPhotoGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2940E720E4B97A0048D01A /* GCYPhotoGroupCell.m */; };
+		3E2940EB20E4BC7B0048D01A /* GCYPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2940EA20E4BC7B0048D01A /* GCYPhotoCollectionViewCell.m */; };
+		3E2940EE20E4C97F0048D01A /* GCYPhotoAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2940ED20E4C97F0048D01A /* GCYPhotoAuthor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +145,20 @@
 		3E2940A220E22D370048D01A /* ADTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADTestView.m; sourceTree = "<group>"; };
 		3E2940A420E23C6D0048D01A /* AdImageButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdImageButtonView.m; sourceTree = "<group>"; };
 		3E2940A520E23C6D0048D01A /* AdImageButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdImageButtonView.h; sourceTree = "<group>"; };
+		3E2940DB20E4B3A30048D01A /* PhotoPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPrefix.pch; sourceTree = "<group>"; };
+		3E2940DC20E4B42A0048D01A /* ConstHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstHeader.h; sourceTree = "<group>"; };
+		3E2940DD20E4B4780048D01A /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		3E2940DE20E4B4780048D01A /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		3E2940E020E4B4DA0048D01A /* GCYPhotoGroupModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYPhotoGroupModel.h; sourceTree = "<group>"; };
+		3E2940E120E4B4DA0048D01A /* GCYPhotoGroupModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYPhotoGroupModel.m; sourceTree = "<group>"; };
+		3E2940E320E4B7940048D01A /* GCYPhotoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYPhotoModel.h; sourceTree = "<group>"; };
+		3E2940E420E4B7940048D01A /* GCYPhotoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYPhotoModel.m; sourceTree = "<group>"; };
+		3E2940E620E4B97A0048D01A /* GCYPhotoGroupCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYPhotoGroupCell.h; sourceTree = "<group>"; };
+		3E2940E720E4B97A0048D01A /* GCYPhotoGroupCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYPhotoGroupCell.m; sourceTree = "<group>"; };
+		3E2940E920E4BC7B0048D01A /* GCYPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		3E2940EA20E4BC7B0048D01A /* GCYPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		3E2940EC20E4C97F0048D01A /* GCYPhotoAuthor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYPhotoAuthor.h; sourceTree = "<group>"; };
+		3E2940ED20E4C97F0048D01A /* GCYPhotoAuthor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYPhotoAuthor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +191,7 @@
 		3E29401420E0BCDC0048D01A /* PhotoBrowse */ = {
 			isa = PBXGroup;
 			children = (
+				3E2940D420E4B2E20048D01A /* ChooseBrowser */,
 				3E2940A520E23C6D0048D01A /* AdImageButtonView.h */,
 				3E2940A420E23C6D0048D01A /* AdImageButtonView.m */,
 				3E29409D20E20C1F0048D01A /* ADView */,
@@ -188,6 +209,8 @@
 				3E29402020E0BCDE0048D01A /* LaunchScreen.storyboard */,
 				3E29402320E0BCDE0048D01A /* Info.plist */,
 				3E29402420E0BCDE0048D01A /* main.m */,
+				3E2940DB20E4B3A30048D01A /* PhotoPrefix.pch */,
+				3E2940DA20E4B34E0048D01A /* Main */,
 			);
 			path = PhotoBrowse;
 			sourceTree = "<group>";
@@ -347,6 +370,73 @@
 			path = ADView;
 			sourceTree = "<group>";
 		};
+		3E2940D420E4B2E20048D01A /* ChooseBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				3E2940D920E4B33C0048D01A /* Other */,
+				3E2940D820E4B3340048D01A /* Manager */,
+				3E2940D720E4B32D0048D01A /* Model */,
+				3E2940D620E4B3260048D01A /* View */,
+				3E2940D520E4B31B0048D01A /* Controller */,
+			);
+			path = ChooseBrowser;
+			sourceTree = "<group>";
+		};
+		3E2940D520E4B31B0048D01A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3E2940D620E4B3260048D01A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E2940E620E4B97A0048D01A /* GCYPhotoGroupCell.h */,
+				3E2940E720E4B97A0048D01A /* GCYPhotoGroupCell.m */,
+				3E2940E920E4BC7B0048D01A /* GCYPhotoCollectionViewCell.h */,
+				3E2940EA20E4BC7B0048D01A /* GCYPhotoCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E2940D720E4B32D0048D01A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E2940E020E4B4DA0048D01A /* GCYPhotoGroupModel.h */,
+				3E2940E120E4B4DA0048D01A /* GCYPhotoGroupModel.m */,
+				3E2940E320E4B7940048D01A /* GCYPhotoModel.h */,
+				3E2940E420E4B7940048D01A /* GCYPhotoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E2940D820E4B3340048D01A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3E2940EC20E4C97F0048D01A /* GCYPhotoAuthor.h */,
+				3E2940ED20E4C97F0048D01A /* GCYPhotoAuthor.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3E2940D920E4B33C0048D01A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3E2940DD20E4B4780048D01A /* UIView+Frame.h */,
+				3E2940DE20E4B4780048D01A /* UIView+Frame.m */,
+				3E2940DC20E4B42A0048D01A /* ConstHeader.h */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		3E2940DA20E4B34E0048D01A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,7 +516,10 @@
 				3E29408320E0EF1F0048D01A /* DALabeledCircularProgressView.m in Sources */,
 				3E29408620E0EF1F0048D01A /* FLAnimatedImageView.m in Sources */,
 				3E29404520E0EA6F0048D01A /* PhotosPreviewController.m in Sources */,
+				3E2940EB20E4BC7B0048D01A /* GCYPhotoCollectionViewCell.m in Sources */,
 				3E29403020E0BF3F0048D01A /* Photo.m in Sources */,
+				3E2940EE20E4C97F0048D01A /* GCYPhotoAuthor.m in Sources */,
+				3E2940DF20E4B4780048D01A /* UIView+Frame.m in Sources */,
 				3E29403920E0C94E0048D01A /* PhotoImageView.m in Sources */,
 				3E29401A20E0BCDC0048D01A /* ViewController.m in Sources */,
 				3E29404820E0EEF20048D01A /* PhotoViewCell.m in Sources */,
@@ -436,6 +529,7 @@
 				3E29403C20E0D3890048D01A /* PhotosView.m in Sources */,
 				3E2940A620E23C6D0048D01A /* AdImageButtonView.m in Sources */,
 				3E29408520E0EF1F0048D01A /* FLAnimatedImage.m in Sources */,
+				3E2940E220E4B4DA0048D01A /* GCYPhotoGroupModel.m in Sources */,
 				3E29409820E0EF1F0048D01A /* NSImage+WebCache.m in Sources */,
 				3E29409B20E0EF1F0048D01A /* UIView+WebCache.m in Sources */,
 				3E29409720E0EF1F0048D01A /* UIImageView+WebCache.m in Sources */,
@@ -450,11 +544,13 @@
 				3E29403420E0C5240048D01A /* PYPhotoBrowserConst.m in Sources */,
 				3E29409020E0EF1F0048D01A /* UIImage+GIF.m in Sources */,
 				3E29401720E0BCDC0048D01A /* AppDelegate.m in Sources */,
+				3E2940E820E4B97A0048D01A /* GCYPhotoGroupCell.m in Sources */,
 				3E29408B20E0EF1F0048D01A /* SDWebImageManager.m in Sources */,
 				3E29408420E0EF1F0048D01A /* DACircularProgressView.m in Sources */,
 				3E29409120E0EF1F0048D01A /* UIImage+MultiFormat.m in Sources */,
 				3E29409520E0EF1F0048D01A /* SDWebImageDownloaderOperation.m in Sources */,
 				3E29408720E0EF1F0048D01A /* MBProgressHUD.m in Sources */,
+				3E2940E520E4B7940048D01A /* GCYPhotoModel.m in Sources */,
 				3E2940A020E20E440048D01A /* ADView.m in Sources */,
 				3E29408A20E0EF1F0048D01A /* MKAnnotationView+WebCache.m in Sources */,
 				3E29409420E0EF1F0048D01A /* SDImageCache.m in Sources */,
@@ -600,6 +696,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z899C473MY;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PhotoBrowse/PhotoPrefix.pch";
 				INFOPLIST_FILE = PhotoBrowse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -618,6 +716,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z899C473MY;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PhotoBrowse/PhotoPrefix.pch";
 				INFOPLIST_FILE = PhotoBrowse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
