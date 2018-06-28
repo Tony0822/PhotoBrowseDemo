@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F61B5A820E53F6400DC5CF4 /* GCYPhotoKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F61B5A720E53F6400DC5CF4 /* GCYPhotoKitManager.m */; };
 		3E29401720E0BCDC0048D01A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29401620E0BCDC0048D01A /* AppDelegate.m */; };
 		3E29401A20E0BCDC0048D01A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29401920E0BCDC0048D01A /* ViewController.m */; };
 		3E29401D20E0BCDC0048D01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E29401B20E0BCDC0048D01A /* Main.storyboard */; };
@@ -60,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F61B5A620E53F6400DC5CF4 /* GCYPhotoKitManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYPhotoKitManager.h; sourceTree = "<group>"; };
+		0F61B5A720E53F6400DC5CF4 /* GCYPhotoKitManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYPhotoKitManager.m; sourceTree = "<group>"; };
 		3E29401220E0BCDC0048D01A /* PhotoBrowse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBrowse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E29401520E0BCDC0048D01A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E29401620E0BCDC0048D01A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -416,6 +419,8 @@
 			children = (
 				3E2940EC20E4C97F0048D01A /* GCYPhotoAuthor.h */,
 				3E2940ED20E4C97F0048D01A /* GCYPhotoAuthor.m */,
+				0F61B5A620E53F6400DC5CF4 /* GCYPhotoKitManager.h */,
+				0F61B5A720E53F6400DC5CF4 /* GCYPhotoKitManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E29409A20E0EF1F0048D01A /* UIView+WebCacheOperation.m in Sources */,
+				0F61B5A820E53F6400DC5CF4 /* GCYPhotoKitManager.m in Sources */,
 				3E2940A320E22D370048D01A /* ADTestView.m in Sources */,
 				3E29408F20E0EF1F0048D01A /* SDWebImageDownloader.m in Sources */,
 				3E29404220E0EA4E0048D01A /* PhotosReaderController.m in Sources */,
