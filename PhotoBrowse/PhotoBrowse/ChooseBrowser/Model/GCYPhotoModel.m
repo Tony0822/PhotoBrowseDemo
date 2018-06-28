@@ -49,7 +49,7 @@ const char * kOriginalImageSize = "kOriginalImageSize";//原图大小
     options.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;
     
     [[GCYPhotoModel sharedPHImageManager] requestImageForAsset:self.phAsset
-                                                    targetSize:CGSizeMake(itemWH*screenScale, itemWH*screenScale)
+                                                    targetSize:CGSizeMake(itemWH * screenScale, itemWH * screenScale)
                                                    contentMode:PHImageContentModeDefault
                                                        options:options
                                                  resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
@@ -60,7 +60,27 @@ const char * kOriginalImageSize = "kOriginalImageSize";//原图大小
 }
 
 -(void)fullScreenImageWithBlock:(GetFullScreenImageBlock)GetFullScreenImageBlock {
-    
+    UIImage *image = objc_getAssociatedObject(self, kFullScreenImageKey);
+    if (image != nil) {
+        GetFullScreenImageBlock(image,YES);
+        return;
+    }
+    CGFloat screenScale = [UIScreen mainScreen].scale;
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    options.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;
+    [[GCYPhotoModel sharedPHImageManager] requestImageForAsset:self.phAsset
+                                                    targetSize:CGSizeMake(SCREENWIDTH * screenScale, SCREENHEIGHT * screenScale)
+                                                   contentMode:PHImageContentModeAspectFill
+                                                       options:options
+                                                 resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                                                     if ([[info valueForKey:@"PHImageResultIsDegradedKey"] integerValue] == 0) {
+                                                         GetFullScreenImageBlock(result, YES);
+                                                         // 此处设置关联对象
+                                                         objc_setAssociatedObject(self, kFullScreenImageKey, result, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+                                                     } else {
+                                                         GetFullScreenImageBlock(result, NO);
+                                                     }
+                                                 }];
 }
 #pragma mark -- private
 
@@ -80,5 +100,33 @@ const char * kOriginalImageSize = "kOriginalImageSize";//原图大小
     [self getOriginalImageSizeWithAsset:phAsset];
 }
 
+#pragma mark - 原图相关元素
+
+//原图的路径
+- (NSString *)originalImageFileURL {
+    
+    NSString *path = objc_getAssociatedObject(self, kPHImageFileURLKey);
+    return path;
+}
+//原图的data
+- (NSData *)originalImageData {
+    
+    NSData *data= objc_getAssociatedObject(self, kOriginalImageData);
+    return data;
+}
+
+//原图的大小
+- (CGFloat)originalImageSize {
+    
+    NSString *size = objc_getAssociatedObject(self, kOriginalImageSize);
+    return [size floatValue];
+}
+
+- (BOOL)isVideoType{
+    
+    PHAssetMediaType mediaType = self.phAsset.mediaType;
+    return mediaType == PHAssetMediaTypeVideo ? YES : NO;
+    
+}
 
 @end
