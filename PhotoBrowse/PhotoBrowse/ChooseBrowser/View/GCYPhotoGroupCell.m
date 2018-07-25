@@ -8,6 +8,7 @@
 
 #import "GCYPhotoGroupCell.h"
 #import "GCYPhotoGroupModel.h"
+
 @interface GCYPhotoGroupCell ()
 /**
  *  缩略图

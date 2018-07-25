@@ -10,6 +10,9 @@
 
 @class GCYPhotoGroupModel;
 
+/**
+ 单个相册中照片管理类
+ */
 @interface GCYPhotoKitManager : NSObject
 
 /**

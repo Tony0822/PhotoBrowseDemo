@@ -12,6 +12,9 @@ typedef void(^CheckSuccess)(void);
 typedef void(^CheckFailure)(NSString *message);
 
 
+/**
+ 相册相机权限
+ */
 @interface GCYPhotoAuthor : NSObject
 /**
  检查相册权限

@@ -1,8 +1,8 @@
 //
-//  GCYPhotoGroupCell.h
+//  GCYPhotoListController.h
 //  PhotoBrowse
 //
-//  Created by gaochongyang on 2018/6/28.
+//  Created by TonyYang on 2018/7/25.
 //  Copyright © 2018年 gaochongyang. All rights reserved.
 //
 
@@ -10,11 +10,8 @@
 
 @class GCYPhotoGroupModel;
 
-/**
- 相册组cell
- */
-@interface GCYPhotoGroupCell : UITableViewCell
-
+@interface GCYPhotoListController : UIViewController
 @property (nonatomic, strong) GCYPhotoGroupModel *groupModel;
+@property (nonatomic, assign) NSInteger maxImageCount;
 
 @end

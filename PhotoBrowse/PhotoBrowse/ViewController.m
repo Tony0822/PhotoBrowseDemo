@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "AdImageButtonView.h"
+#import "GCYChoosePictureView.h"
 
 @interface ViewController ()
 
@@ -18,15 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-  AdImageButtonView *timerView = [[AdImageButtonView alloc] initWithFrame:CGRectMake(100, 100, 40, 40)];
-    timerView.delayTime = 4;
-    [self.view addSubview:timerView];
-
+    GCYChoosePictureView *pView = [[GCYChoosePictureView alloc] initWithFrame:CGRectMake(10, 100, self.view.width - 20, self.view.width - 20)];
+    
+    pView.superViewController = self;
+    [self.view addSubview:pView];
+ 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 
