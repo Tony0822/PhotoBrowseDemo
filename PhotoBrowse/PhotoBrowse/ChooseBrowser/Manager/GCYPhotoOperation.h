@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GCYPhotoModel.h"
 
-@interface GCYPhotoOperation : NSObject
+@interface GCYPhotoOperation : NSOperation
+
++ (instancetype)addOperationWithModel:(GCYPhotoModel *)model completeBlock:(GetFullScreenImageBlock)completeBlock;
+
 
 @end

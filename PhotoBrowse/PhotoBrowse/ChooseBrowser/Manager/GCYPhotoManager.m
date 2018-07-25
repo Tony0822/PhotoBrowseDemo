@@ -10,6 +10,8 @@
 #import "GCYPhotoAuthor.h"
 #import "GCYPhotoGroupListController.h"
 #import "GCYPhotoModel.h"
+#import "GCYPhotoOperation.h"
+
 
 @interface GCYPhotoManager ()
 @property(nonatomic,strong) NSOperationQueue *imageQueue;
@@ -68,7 +70,20 @@
         [model thumbImageWithBlock:^(UIImage *thumbImage) {
             [thumbImageArr addObject:thumbImage];
         }];
-        
+        GCYPhotoOperation *op = [GCYPhotoOperation addOperationWithModel:model completeBlock:^(UIImage *fullScreenImage, BOOL isFull) {
+            if (isFull) {
+                imageCount ++;
+                [originalImageArr addObject:fullScreenImage];
+                if (imageCount == imageArray.count) {
+                    if ([self.delegate respondsToSelector:@selector(imagePickerControllerDidFinishPickingMediaWithThumbImages:originalImages:)]) {
+                        
+                        [self.delegate imagePickerControllerDidFinishPickingMediaWithThumbImages:thumbImageArr originalImages:originalImageArr];
+                        success(YES);
+                    }
+                }
+            }
+        }];
+        [self.imageQueue addOperation:op];
     }
 }
 

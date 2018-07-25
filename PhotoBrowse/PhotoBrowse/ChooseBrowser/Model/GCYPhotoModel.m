@@ -53,6 +53,7 @@ const char * kOriginalImageSize = "kOriginalImageSize";//原图大小
                                                    contentMode:PHImageContentModeDefault
                                                        options:options
                                                  resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                                                     GetThumbImageBlock(result);
                                                     // 此处设置关联对象
                                                      objc_setAssociatedObject(self, kThumbImageKey, result, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
                                                  }];

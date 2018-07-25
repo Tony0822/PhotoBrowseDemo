@@ -13,6 +13,9 @@
 		0F6E422321083EDA00D0A179 /* GCYPhotoGroupListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E422221083EDA00D0A179 /* GCYPhotoGroupListController.m */; };
 		0F6E4226210841E900D0A179 /* GCYPhotoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E4225210841E900D0A179 /* GCYPhotoListController.m */; };
 		0F6E42292108492D00D0A179 /* GCYPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E42282108492D00D0A179 /* GCYPhotoOperation.m */; };
+		0F6E422C2108595800D0A179 /* GCYShowBigImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E422B2108595800D0A179 /* GCYShowBigImageView.m */; };
+		0F6E422F2108823700D0A179 /* GCYPhotoShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E422E2108823700D0A179 /* GCYPhotoShowController.m */; };
+		0F6E42322108824C00D0A179 /* GCYScreenPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E42312108824C00D0A179 /* GCYScreenPhotoController.m */; };
 		3E29401720E0BCDC0048D01A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29401620E0BCDC0048D01A /* AppDelegate.m */; };
 		3E29401A20E0BCDC0048D01A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29401920E0BCDC0048D01A /* ViewController.m */; };
 		3E29401D20E0BCDC0048D01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E29401B20E0BCDC0048D01A /* Main.storyboard */; };
@@ -75,6 +78,12 @@
 		0F6E4225210841E900D0A179 /* GCYPhotoListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYPhotoListController.m; sourceTree = "<group>"; };
 		0F6E42272108492D00D0A179 /* GCYPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYPhotoOperation.h; sourceTree = "<group>"; };
 		0F6E42282108492D00D0A179 /* GCYPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYPhotoOperation.m; sourceTree = "<group>"; };
+		0F6E422A2108595800D0A179 /* GCYShowBigImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYShowBigImageView.h; sourceTree = "<group>"; };
+		0F6E422B2108595800D0A179 /* GCYShowBigImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYShowBigImageView.m; sourceTree = "<group>"; };
+		0F6E422D2108823700D0A179 /* GCYPhotoShowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYPhotoShowController.h; sourceTree = "<group>"; };
+		0F6E422E2108823700D0A179 /* GCYPhotoShowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYPhotoShowController.m; sourceTree = "<group>"; };
+		0F6E42302108824C00D0A179 /* GCYScreenPhotoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCYScreenPhotoController.h; sourceTree = "<group>"; };
+		0F6E42312108824C00D0A179 /* GCYScreenPhotoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCYScreenPhotoController.m; sourceTree = "<group>"; };
 		3E29401220E0BCDC0048D01A /* PhotoBrowse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBrowse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E29401520E0BCDC0048D01A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E29401620E0BCDC0048D01A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -217,6 +226,8 @@
 				3E29401920E0BCDC0048D01A /* ViewController.m */,
 				0F6E421321073AE300D0A179 /* GCYChoosePictureView.h */,
 				0F6E421421073AE300D0A179 /* GCYChoosePictureView.m */,
+				0F6E422A2108595800D0A179 /* GCYShowBigImageView.h */,
+				0F6E422B2108595800D0A179 /* GCYShowBigImageView.m */,
 				3E29401B20E0BCDC0048D01A /* Main.storyboard */,
 				3E29401E20E0BCDE0048D01A /* Assets.xcassets */,
 				3E29402020E0BCDE0048D01A /* LaunchScreen.storyboard */,
@@ -393,6 +404,10 @@
 				0F6E422221083EDA00D0A179 /* GCYPhotoGroupListController.m */,
 				0F6E4224210841E900D0A179 /* GCYPhotoListController.h */,
 				0F6E4225210841E900D0A179 /* GCYPhotoListController.m */,
+				0F6E422D2108823700D0A179 /* GCYPhotoShowController.h */,
+				0F6E422E2108823700D0A179 /* GCYPhotoShowController.m */,
+				0F6E42302108824C00D0A179 /* GCYScreenPhotoController.h */,
+				0F6E42312108824C00D0A179 /* GCYScreenPhotoController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -533,9 +548,11 @@
 				3E29403920E0C94E0048D01A /* PhotoImageView.m in Sources */,
 				3E29401A20E0BCDC0048D01A /* ViewController.m in Sources */,
 				3E29404820E0EEF20048D01A /* PhotoViewCell.m in Sources */,
+				0F6E422F2108823700D0A179 /* GCYPhotoShowController.m in Sources */,
 				3E29409320E0EF1F0048D01A /* SDWebImagePrefetcher.m in Sources */,
 				3E29409620E0EF1F0048D01A /* NSData+ImageContentType.m in Sources */,
 				3E29408920E0EF1F0048D01A /* UIImage+WebP.m in Sources */,
+				0F6E422C2108595800D0A179 /* GCYShowBigImageView.m in Sources */,
 				3E29403C20E0D3890048D01A /* PhotosView.m in Sources */,
 				3E29408520E0EF1F0048D01A /* FLAnimatedImage.m in Sources */,
 				3E2940E220E4B4DA0048D01A /* GCYPhotoGroupModel.m in Sources */,
@@ -559,6 +576,7 @@
 				3E29408420E0EF1F0048D01A /* DACircularProgressView.m in Sources */,
 				3E29409120E0EF1F0048D01A /* UIImage+MultiFormat.m in Sources */,
 				3E29409520E0EF1F0048D01A /* SDWebImageDownloaderOperation.m in Sources */,
+				0F6E42322108824C00D0A179 /* GCYScreenPhotoController.m in Sources */,
 				3E29408720E0EF1F0048D01A /* MBProgressHUD.m in Sources */,
 				3E2940E520E4B7940048D01A /* GCYPhotoModel.m in Sources */,
 				0F6E421521073AE300D0A179 /* GCYChoosePictureView.m in Sources */,

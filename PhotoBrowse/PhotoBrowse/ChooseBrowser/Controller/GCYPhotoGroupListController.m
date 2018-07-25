@@ -52,7 +52,7 @@
     listVC.title = model.groupName;
     listVC.groupModel = model;
     listVC.maxImageCount = self.maxImageCount;
-    [self.navigationController pushViewController:listVC animated:NO];
+    [self.navigationController pushViewController:listVC animated:YES];
 }
 
 - (void)setNavigationRightButton {

@@ -9,10 +9,12 @@
 #import "GCYChoosePictureView.h"
 #import "GCYPhotoAuthor.h"
 #import "GCYPhotoManager.h"
+#import "GCYShowBigImageView.h"
 
 #define KitemWidth (self.width - 20) / 3.0
 
-@interface GCYChoosePictureView ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface GCYChoosePictureView ()<UICollectionViewDelegate, UICollectionViewDataSource, GCYPhotoManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 
 @property(nonatomic,weak) UIButton *addBtn;
 @property(nonatomic,weak) UICollectionView *collectionView;
@@ -116,6 +118,31 @@
     [self.superViewController presentViewController:alertCtrl animated:YES completion:nil];
 }
 
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self.imageArray addObject:image];
+    [self.collectionView reloadData];
+    [self p_ChangeBtnFrame];
+}
+
+
+// GCYPhotoManagerDelegate
+- (void)imagePickerControllerDidCancel {
+    
+}
+
+- (void)imagePickerControllerDidFinishPickingMediaWithThumbImages:(NSArray *)thumbImages originalImages:(NSArray *)originalImages {
+    [self.imageArray addObjectsFromArray:originalImages];
+    [self.collectionView reloadData];
+    [self p_ChangeBtnFrame];
+}
+
 
 #pragma mark -- CollectionDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -150,7 +177,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UIImage *image = (UIImage *)self.imageArray[indexPath.item];
-//    [JPShowBigImageView showBigImageWithImage:image];
+    [GCYShowBigImageView showBigImageWithImage:image];
 }
 
 
