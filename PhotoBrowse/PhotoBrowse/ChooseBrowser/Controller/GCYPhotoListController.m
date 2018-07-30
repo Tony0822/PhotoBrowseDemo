@@ -37,15 +37,15 @@
     
     [self setNavigationRightButton];
     [self setBottomView];
-    [self setListData];
+    [self requestPhotoListData];
 }
-
-- (void)setListData {
+#pragma mark -- 初始化数据
+- (void)requestPhotoListData {
     NSArray *photoList = [[GCYPhotoKitManager sharedPhotoKitManager] getPhotoListWithModel:self.groupModel];
     [self.photoDataArray addObjectsFromArray:photoList];
     [self.photoCollectionView reloadData];
 }
-
+#pragma mark -- 导航
 - (void)setNavigationRightButton {
     UIButton *cancleBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 32, 32)];
     [cancleBtn setTitle:@"取消" forState:UIControlStateNormal];
@@ -57,22 +57,26 @@
     self.navigationItem.rightBarButtonItem = item;
 }
 
+- (void)clickCancleBtn {
+    [[GCYPhotoManager sharedPhotoManager] cancelChoosePhoto];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)setBottomView {
     UIView *bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREENHEIGHT-TAB_BAR_HEIGHT, SCREENWIDTH, TAB_BAR_HEIGHT)];
     bottomView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:bottomView];
     
     self.preViewBtn.left = 10;
+    self.preViewBtn.centerY = bottomView.height * 0.5;
     [bottomView addSubview:self.preViewBtn];
+    
     self.sendBtn.right = SCREENWIDTH - 10;
+    self.sendBtn.centerY = bottomView.height * 0.5;
     [bottomView addSubview:self.sendBtn];
 }
 
 #pragma mark -- Action
-- (void)clickCancleBtn {
-    [[GCYPhotoManager sharedPhotoManager] cancelChoosePhoto];
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void)sendPhoto {
     if (!self.seletedPhotoArray.count) {
@@ -124,7 +128,6 @@
     
     GCYPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PHOTOCELL_ID forIndexPath:indexPath];
     cell.photoModel = [self.photoDataArray objectAtIndex:indexPath.item];
-    
     cell.delegate = self;
     return cell;
 }
@@ -144,7 +147,7 @@
     }];
     [self.navigationController pushViewController:screenPhotoCtrl animated:YES];
 }
-
+#pragma mark 点击选中按钮的代理
 - (void)thumbImageSeletedChooseIndexPath:(NSIndexPath *)indexPath selectedBtn:(UIButton *)selectedBtn {
       GCYPhotoModel *photoModel = [self.photoDataArray objectAtIndex:indexPath.item];
     if (self.seletedPhotoIndexPathArray.count == self.maxImageCount && !photoModel.isSelect) {
@@ -191,9 +194,9 @@
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
         layout.minimumLineSpacing = 5;
         layout.minimumInteritemSpacing = 5;
-        CGFloat itemWH = (SCREENWIDTH - (ROW_COUNT+1)*10/2)/ROW_COUNT;
+        CGFloat itemWH = (SCREENWIDTH - (ROW_COUNT+1)*5)/ROW_COUNT;
         layout.itemSize = CGSizeMake(itemWH, itemWH);
-        _photoCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(10/2, 10/2, SCREENWIDTH-10, SCREENHEIGHT-44-10-HOME_INDICATOR_HEIGHT) collectionViewLayout:layout];
+        _photoCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(5, 5, SCREENWIDTH-10, SCREENHEIGHT-44-10-HOME_INDICATOR_HEIGHT) collectionViewLayout:layout];
         _photoCollectionView.delegate = self;
         _photoCollectionView.dataSource = self;
         _photoCollectionView.backgroundColor = [UIColor whiteColor];

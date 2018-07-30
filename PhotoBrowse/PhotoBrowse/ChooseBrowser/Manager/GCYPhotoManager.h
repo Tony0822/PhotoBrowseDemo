@@ -24,6 +24,9 @@
 
 @end
 
+/**
+ 相册的基本操作
+ */
 @interface GCYPhotoManager : NSObject
 
 /**

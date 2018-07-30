@@ -119,6 +119,7 @@
     
     return self.imageV;
 }
+
 - (UIScrollView *)scrollView{
     
     if (!_scrollView) {

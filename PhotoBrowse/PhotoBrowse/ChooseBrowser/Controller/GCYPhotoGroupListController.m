@@ -30,15 +30,18 @@
 
     [self setNavigationRightButton];
     
-    [self setPushNavigation];
+    [self requestGroupPhotoData];
 }
-
-- (void)setPushNavigation {
+- (void)requestGroupPhotoData {
     //获取相册列表
     NSArray *groupArray = [[GCYPhotoKitManager sharedPhotoKitManager] getPhotoGroupArray];
     [self.groupDataArray addObjectsFromArray:groupArray];
     [self.groupTableView reloadData];
-    
+    [self setPushNavigation];
+
+}
+#pragma mark -- push到选择VC
+- (void)setPushNavigation {
     // 遍历找出相机胶卷组 直接打开
     for (GCYPhotoGroupModel *model in self.groupDataArray) {
         if ([model.groupName isEqualToString:@"相机胶卷"] || [model.groupName isEqualToString:@"Camera Roll"]) {
@@ -54,7 +57,7 @@
     listVC.maxImageCount = self.maxImageCount;
     [self.navigationController pushViewController:listVC animated:YES];
 }
-
+#pragma mark -- 取消
 - (void)setNavigationRightButton {
     UIButton *cancleBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
     [cancleBtn setTitle:@"取消" forState:UIControlStateNormal];
@@ -66,7 +69,6 @@
     self.navigationItem.rightBarButtonItem = item;
 }
 
-#pragma mark -- Action
 - (void)clickCancleBtn {
     [[GCYPhotoManager sharedPhotoManager] cancelChoosePhoto];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];

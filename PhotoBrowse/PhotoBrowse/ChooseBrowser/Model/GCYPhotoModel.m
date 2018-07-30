@@ -28,13 +28,13 @@ const char * kOriginalImageSize = "kOriginalImageSize";//原图大小
     return imageManger;
 }
 
-- (NSString *)videoTime {
-    NSInteger time = (NSInteger)self.phAsset.duration;
-    NSInteger minute = time / 60;
-    CGFloat second = time % 60;
-    return [NSString stringWithFormat:@"%zd:%.2f",minute,second];
+- (void)setPhAsset:(PHAsset *)phAsset {
+    _phAsset = phAsset;
+    //图片的属性
+    [self getOriginalImageSizeWithAsset:phAsset];
 }
 
+#pragma mark -- 缩略图相关
 - (void)thumbImageWithBlock:(GetThumbImageBlock)GetThumbImageBlock {
     //取出关联对象 所关联的值
     UIImage *image = objc_getAssociatedObject(self, kThumbImageKey);
@@ -53,13 +53,14 @@ const char * kOriginalImageSize = "kOriginalImageSize";//原图大小
                                                    contentMode:PHImageContentModeDefault
                                                        options:options
                                                  resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                                                     NSLog(@"此处是===缩略图");
                                                      GetThumbImageBlock(result);
                                                     // 此处设置关联对象
                                                      objc_setAssociatedObject(self, kThumbImageKey, result, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
                                                  }];
     
 }
-
+#pragma mark -- 全屏图相关
 -(void)fullScreenImageWithBlock:(GetFullScreenImageBlock)GetFullScreenImageBlock {
     UIImage *image = objc_getAssociatedObject(self, kFullScreenImageKey);
     if (image != nil) {
@@ -74,6 +75,7 @@ const char * kOriginalImageSize = "kOriginalImageSize";//原图大小
                                                    contentMode:PHImageContentModeAspectFill
                                                        options:options
                                                  resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                                                     NSLog(@"此处是===全屏图");
                                                      if ([[info valueForKey:@"PHImageResultIsDegradedKey"] integerValue] == 0) {
                                                          GetFullScreenImageBlock(result, YES);
                                                          // 此处设置关联对象
@@ -94,11 +96,6 @@ const char * kOriginalImageSize = "kOriginalImageSize";//原图大小
                                                          objc_setAssociatedObject(self, kOriginalImageData, imageData, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
                                                          objc_setAssociatedObject(self, kPHImageFileURLKey, [info objectForKey:@"PHImageFileURLKey"], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
                                                      }];
-}
-- (void)setPhAsset:(PHAsset *)phAsset {
-    _phAsset = phAsset;
-    //图片的属性
-    [self getOriginalImageSizeWithAsset:phAsset];
 }
 
 #pragma mark - 原图相关元素
@@ -130,4 +127,10 @@ const char * kOriginalImageSize = "kOriginalImageSize";//原图大小
     
 }
 
+- (NSString *)videoTime {
+    NSInteger time = (NSInteger)self.phAsset.duration;
+    NSInteger minute = time / 60;
+    CGFloat second = time % 60;
+    return [NSString stringWithFormat:@"%zd:%.2f",minute,second];
+}
 @end
